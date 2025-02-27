@@ -1,0 +1,618 @@
+{
+  "data": [
+    {
+      "gid": "1209357841082838",
+      "created_at": "2025-02-05T00:00:00Z",
+      "completed_at": "2025-02-25T00:00:00Z",
+      "name": "Define roles & responsibilities",
+      "Section/Column": "Project Planning & Logistics",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-08",
+      "custom_fields": [
+        {
+          "name": "Priority",
+          "enum_value": { "name": "Low" }
+        }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Project Planning & Logistics" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082840",
+      "created_at": "2025-02-05T00:00:00Z",
+      "completed_at": "2025-02-11T00:00:00Z",
+      "name": "Select project idea",
+      "Section/Column": "Project Planning & Logistics",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-11",
+      "custom_fields": [
+        {
+          "name": "Priority",
+          "enum_value": { "name": "High" }
+        }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Project Planning & Logistics" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082842",
+      "created_at": "2025-02-05T00:00:00Z",
+      "completed_at": "2025-02-08T00:00:00Z",
+      "name": "Set up a communication platform",
+      "Section/Column": "Project Planning & Logistics",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-08",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Project Planning & Logistics" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082844",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": null,
+      "name": "Establish budget & acquire materials",
+      "Section/Column": "Project Planning & Logistics",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-02-15",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Medium" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Project Planning & Logistics" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082846",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-25T00:00:00Z",
+      "name": "Research & benchmarking",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Edwards Doh",
+      "due_on": "2025-02-16",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082848",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-25T00:00:00Z",
+      "name": "Create Doc concept memo",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-02-18",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082850",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-25T00:00:00Z",
+      "name": "Create PowerPoint presentation",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-02-18",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082852",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-25T00:00:00Z",
+      "name": "System Concept Presentation",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-21",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082880",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-26T00:00:00Z",
+      "name": "System Concept Memo",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-25",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209501120702089",
+      "created_at": "2025-02-25T00:00:00Z",
+      "completed_at": "2025-03-20T00:00:00Z",
+      "name": "Assemble components",
+      "Section/Column": "Prototype Development",
+      "assignee": "Blake Leichter",
+      "due_on": "2025-03-20",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082854",
+      "created_at": "2025-02-08T00:00:00Z",
+      "completed_at": "2025-02-26T00:00:00Z",
+      "name": "Delegate design subsystems (hardware, software, integration)",
+      "Section/Column": "Prototype Development",
+      "assignee": "Edwards Doh",
+      "due_on": "2025-02-25",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082856",
+      "created_at": "2025-02-26T00:00:00Z",
+      "completed_at": "2025-04-01T00:00:00Z",
+      "name": "Purchase components",
+      "Section/Column": "Prototype Development",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-03-02",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082860",
+      "created_at": "2025-03-10T00:00:00Z",
+      "completed_at": "2025-03-25T00:00:00Z",
+      "name": "Integrate subsystems",
+      "Section/Column": "Prototype Development",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-04-07",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082862",
+      "created_at": "2025-04-01T00:00:00Z",
+      "completed_at": "2025-04-15T00:00:00Z",
+      "name": "Conduct performance testing",
+      "Section/Column": "Prototype Demonstration (Milestone 2)",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-03-26",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Demonstration (Milestone 2)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082864",
+      "created_at": "2025-04-01T00:00:00Z",
+      "completed_at": "2025-04-07T00:00:00Z",
+      "name": "Prepare demo script & materials",
+      "Section/Column": "Prototype Demonstration (Milestone 2)",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-04-07",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Demonstration (Milestone 2)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082884",
+      "created_at": "2025-04-01T00:00:00Z",
+      "completed_at": "2025-04-15T00:00:00Z",
+      "name": "Demonstration",
+      "Section/Column": "Prototype Demonstration (Milestone 2)",
+      "assignee": "Vidyut Baskar",
+      "due_on": "2025-04-15",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Low" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Demonstration (Milestone 2)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082866",
+      "created_at": "2025-04-15T00:00:00Z",
+      "completed_at": null,
+      "name": "Peer evaluation & feedback",
+      "Section/Column": "Prototype Demonstration (Milestone 2)",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-04-18",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Medium" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Demonstration (Milestone 2)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082870",
+      "created_at": "2025-04-15T00:00:00Z",
+      "completed_at": null,
+      "name": "Final refinements",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Vidyut Baskar",
+      "due_on": "2025-04-21",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082872",
+      "created_at": "2025-04-12T00:00:00Z",
+      "completed_at": null,
+      "name": "Prepare technical report & PowerPoint",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-04-24",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082874",
+      "created_at": "2025-04-24T00:00:00Z",
+      "completed_at": null,
+      "name": "Rehearse final presentation",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-04-27",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082890",
+      "created_at": "2025-04-24T00:00:00Z",
+      "completed_at": null,
+      "name": "Design Review Report",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-04-27",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "1209357841082876",
+      "created_at": "2025-04-24T00:00:00Z",
+      "completed_at": null,
+      "name": "Design Review Presentation",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-04-28",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": null }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "gid": "additional-1",
+      "created_at": "2025-02-01T00:00:00Z",
+      "completed_at": null,
+      "name": "Finalize customer requirements & stakeholder interviews",
+      "Section/Column": "Project Planning & Logistics",
+      "assignee": "Nora Amrani",
+      "due_on": "2025-02-07",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Project Planning & Logistics" }
+        }
+      ],
+      "notes": "Incorporate feedback from Claire Mohoney (RPI Disability Services Director) and other stakeholders to clarify target detection distance and comfort factors."
+    },
+    {
+      "gid": "additional-2",
+      "created_at": "2025-02-07T00:00:00Z",
+      "completed_at": null,
+      "name": "Select sensors and supporting components",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-02-14",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": "Research and compare ultrasonic sensors, haptic drivers, and microcontrollers, prioritizing detection accuracy, battery efficiency, and cost. Compile parts list and supplier estimates."
+    },
+    {
+      "gid": "additional-3",
+      "created_at": "2025-02-15T00:00:00Z",
+      "completed_at": null,
+      "name": "Belt design & haptic feedback testing",
+      "Section/Column": "System Concept Proposal (Milestone 1)",
+      "assignee": "Blake Leichter",
+      "due_on": "2025-02-22",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Medium" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "System Concept Proposal (Milestone 1)" }
+        }
+      ],
+      "notes": "Develop belt layout using material options (e.g., nylon, polyester blends) for comfort and durability; test vibration motor parameters for clear haptic feedback."
+    },
+    {
+      "gid": "additional-4",
+      "created_at": "2025-02-23T00:00:00Z",
+      "completed_at": null,
+      "name": "Subsystem integration & firmware development",
+      "Section/Column": "Prototype Development",
+      "assignee": "Vidyut Baskar",
+      "due_on": "2025-03-01",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": "Integrate power supply, sensors, haptic motors, and microcontroller. Ensure proper communication and that firmware accurately translates sensor inputs into haptic alerts."
+    },
+    {
+      "gid": "additional-5",
+      "created_at": "2025-03-02T00:00:00Z",
+      "completed_at": null,
+      "name": "Prototype assembly",
+      "Section/Column": "Prototype Development",
+      "assignee": "Lizeth Ramirez",
+      "due_on": "2025-03-10",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Medium" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": "Assemble all components into a single functional unit with correct positioning; prepare for real-world testing."
+    },
+    {
+      "gid": "additional-6",
+      "created_at": "2025-03-11T00:00:00Z",
+      "completed_at": null,
+      "name": "Testing & validation",
+      "Section/Column": "Prototype Demonstration (Milestone 2)",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-03-20",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Demonstration (Milestone 2)" }
+        }
+      ],
+      "notes": "Test obstacle detection accuracy, response time, and battery life (target: six hours). Collect usability feedback from pilot users (visually impaired individuals)."
+    },
+    {
+      "gid": "additional-7",
+      "created_at": "2025-04-21T00:00:00Z",
+      "completed_at": null,
+      "name": "Iteration and final adjustments",
+      "Section/Column": "Final Design Review & Documentation (Milestone 3)",
+      "assignee": "Edwards Doh",
+      "due_on": "2025-04-28",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "Medium" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Final Design Review & Documentation (Milestone 3)" }
+        }
+      ],
+      "notes": "Refine hardware, software, and UI based on testing feedback. Address sensor interference, battery issues, and adjust belt fitability."
+    },
+    {
+      "gid": "additional-8",
+      "created_at": "2025-03-01T00:00:00Z",
+      "completed_at": null,
+      "name": "Calibrate ultrasonic sensors",
+      "Section/Column": "Prototype Development",
+      "assignee": "Ethan Katz",
+      "due_on": "2025-03-05",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": "Perform individual calibration of each ultrasonic sensor to ensure accuracy."
+    },
+    {
+      "gid": "additional-9",
+      "created_at": "2025-03-05T00:00:00Z",
+      "completed_at": null,
+      "name": "Develop microcontroller firmware loop",
+      "Section/Column": "Prototype Development",
+      "assignee": "Vidyut Baskar",
+      "due_on": "2025-03-10",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": "Write and test the main firmware loop that reads sensor data and controls haptic feedback."
+    },
+    {
+      "gid": "additional-10",
+      "created_at": "2025-03-10T00:00:00Z",
+      "completed_at": null,
+      "name": "Integrate sensor data with haptic feedback algorithm",
+      "Section/Column": "Prototype Development",
+      "assignee": "Blake Leichter",
+      "due_on": "2025-03-15",
+      "custom_fields": [
+        { "name": "Priority", "enum_value": { "name": "High" } }
+      ],
+      "memberships": [
+        {
+          "project": { "name": "IED Project" },
+          "section": { "name": "Prototype Development" }
+        }
+      ],
+      "notes": "Merge sensor readings with the algorithm to drive the haptic actuators in real time."
+    }
+  ]
+}

@@ -1,46 +1,50 @@
+import json
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from io import StringIO
 
-# Your tab-delimited data (as a multi-line string)
-data = """
-Task ID	Created At	Completed At	Last Modified	Name	Section/Column	Assignee	Assignee Email	Start Date	Due Date	Tags	Notes	Projects	Parent task	Blocked By (Dependencies)	Blocking (Dependencies)	Priority	Status	Notes
-1.20936E+15	2/8/25	2/11/25	2/11/25	Define roles & responsibilities	Project Planning & Logistics	Nora Amrani	nora24amrani@gmail.com		2/8/25			IED Project				Low		
-1.20936E+15	2/8/25	2/11/25	2/11/25	Select project idea	Project Planning & Logistics				2/11/25			IED Project				High		
-1.20936E+15	2/8/25	2/8/25	2/8/25	"Set up a communication platform
-"	Project Planning & Logistics	Nora Amrani	nora24amrani@gmail.com		2/8/25			IED Project						
-1.20936E+15	2/8/25		2/15/25	Establish budget & acquire materials	Project Planning & Logistics	Ethan Katz	thnkatz@gmail.com		2/15/25			IED Project				Medium		
-1.20936E+15	2/8/25	2/25/25	2/25/25	Research & benchmarking	System Concept Proposal (Milestone 1)	Edwards F8	edwardsdf8@gmail.com		2/16/25			IED Project						
-1.20936E+15	2/8/25	2/25/25	2/25/25	Create Doc concept memo	System Concept Proposal (Milestone 1)	Lizeth Ramirez	lizethgr0924@gmail.com		2/18/25			IED Project						
-1.20936E+15	2/8/25	2/25/25	2/25/25	Create PowerPoint presentation	System Concept Proposal (Milestone 1)	Lizeth Ramirez	lizethgr0924@gmail.com		2/18/25			IED Project						
-1.20936E+15	2/8/25	2/25/25	2/25/25	System Concept Presentation	System Concept Proposal (Milestone 1)	Nora Amrani	nora24amrani@gmail.com		2/21/25			IED Project						
-1.20936E+15	2/8/25		2/25/25	System Concept Memo	System Concept Proposal (Milestone 1)	Nora Amrani	nora24amrani@gmail.com		2/25/25			IED Project						
-1.2095E+15	2/25/25		2/25/25	Assemble components	Prototype Development				3/20/25			IED Project						
-1.20936E+15	2/8/25		2/26/25	Delegate design subsystems (hardware, software, integration)	Prototype Development				2/25/25			IED Project						
-1.20936E+15	2/8/25		2/25/25	Purchase components	Prototype Development				3/2/25			IED Project						
-1.20936E+15	2/8/25		2/26/25	Integrate subsystems	Prototype Development	Lizeth Ramirez	lizethgr0924@gmail.com		4/7/25			IED Project						
-1.20936E+15	2/8/25		2/26/25	Conduct performance testing	Prototype Demonstration (Milestone 2)	Ethan Katz	thnkatz@gmail.com		\t\tIED Project				High		
-1.20936E+15	2/8/25		2/8/25	Prepare demo script & materials	Prototype Demonstration (Milestone 2)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Demonstration	Prototype Demonstration (Milestone 2)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Peer evaluation & feedback	Prototype Demonstration (Milestone 2)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Final refinements	Final Design Review & Documentation (Milestone 3)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Prepare technical report & PowerPoint	Final Design Review & Documentation (Milestone 3)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Rehearse final presentation	Final Design Review & Documentation (Milestone 3)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Design Review Report	Final Design Review & Documentation (Milestone 3)							IED Project						
-1.20936E+15	2/8/25		2/8/25	Design Review Presentation	Final Design Review & Documentation (Milestone 3)							IED Project	
-"""
+# -----------------------------
+# 1. Load JSON Data from File
+# -----------------------------
+with open("tasks.json", "r") as f:
+    data = json.load(f)
 
-# Read the data into a DataFrame
-df = pd.read_csv(StringIO(data), sep="\t")
+# Normalize the JSON data into a DataFrame
+df = pd.json_normalize(data["data"])
 
-# Fill missing Start Dates with the "Created At" date and convert dates to datetime objects.
-df['Start Date'] = df['Start Date'].fillna(df['Created At'])
-df['Start Date'] = pd.to_datetime(df['Start Date'], format='%m/%d/%y', errors='coerce')
-df['Due Date'] = pd.to_datetime(df['Due Date'], format='%m/%d/%y', errors='coerce')
+# Capitalize each word in the task name
+df["name"] = df["name"].str.title()
 
-# --- Define color mappings ---
-# Fill color (for bar body) based on the task section.
+# -----------------------------
+# 2. Process and Transform Data
+# -----------------------------
+# Convert created_at (tz-aware) to tz-naive and use it as the Start Date.
+df["Start Date"] = pd.to_datetime(df["created_at"], utc=True).dt.tz_convert(None)
+
+# Convert due_on to datetime (assumed tz-naive)
+df["Due Date"] = pd.to_datetime(df["due_on"], errors="coerce")
+
+# Extract Section/Column from memberships
+df["Section/Column"] = df["memberships"].apply(
+    lambda x: x[0]["section"]["name"] if isinstance(x, list) and len(x) > 0 else None
+)
+
+# Now, the assignee is provided as a string—strip any extra whitespace and default to "Unassigned"
+df["Assignee"] = df["assignee"].fillna("Unassigned").astype(str).str.strip()
+
+# Extract Priority from custom_fields (looking for the field named "Priority")
+def get_priority(cf_list):
+    for field in cf_list:
+        if field.get("name") == "Priority" and field.get("enum_value") is not None:
+            return field["enum_value"].get("name")
+    return None
+
+df["Priority"] = df["custom_fields"].apply(get_priority)
+
+# -----------------------------
+# 3. Define Color Mappings
+# -----------------------------
+# Fill colors for sections (bar interior)
 section_colors = {
     "Project Planning & Logistics": "lightblue",
     "System Concept Proposal (Milestone 1)": "lightgreen",
@@ -48,64 +52,103 @@ section_colors = {
     "Prototype Demonstration (Milestone 2)": "lightcoral",
     "Final Design Review & Documentation (Milestone 3)": "lightgrey"
 }
-# Accent (border) color based on the assignee.
+
+# Border (outline) colors based on the assignee names (the six names)
 assignee_colors = {
     "Nora Amrani": "blue",
-    "Ethan Katz": "red",
+    "Edwards Doh": "purple",
     "Lizeth Ramirez": "green",
-    "Edwards F8": "purple"
+    "Ethan Katz": "red",
+    "Blake Leichter": "orange",
+    "Vidyut Baskar": "brown"
 }
 
-# --- Create the timeline chart.
-# Using color="Section/Column" and providing a discrete color mapping gives us a legend for sections.
+# Create a border_color column based on the Assignee using our mapping
+df["border_color"] = df["Assignee"].map(lambda x: assignee_colors.get(x, "black"))
+
+# -----------------------------
+# 4. Sort DataFrame Chronologically
+# -----------------------------
+df.sort_values("Start Date", inplace=True)
+task_order = df["name"].tolist()
+
+# -----------------------------
+# 5. Build the Gantt Chart
+# -----------------------------
 fig = px.timeline(
     df,
     x_start="Start Date",
     x_end="Due Date",
-    y="Name",
+    y="name",
     color="Section/Column",
     color_discrete_map=section_colors,
-    hover_data=['Assignee', 'Priority']
+    category_orders={"name": task_order},
+    hover_data=["Assignee", "Priority", "notes"]
 )
 
-# Reverse the y-axis so that tasks are listed top-down.
+# Reverse y-axis so that earlier tasks appear at the top
 fig.update_yaxes(autorange="reversed")
 
-# --- Update each trace's marker to include an accent (border) color per task based on assignee.
-# When using color grouping, each trace represents a section.
+# Update each trace's marker to use the border_color for each task.
 for trace in fig.data:
-    # 'trace.name' holds the section (e.g., "Project Planning & Logistics")
-    # Filter rows for this section to get the assignees for each bar in the trace.
-    sub_df = df[df['Section/Column'] == trace.name]
-    border_colors = sub_df['Assignee'].map(assignee_colors).fillna('black').tolist()
-    trace.marker.line.color = border_colors
+    section_tasks = df[df["Section/Column"] == trace.name]
+    colors = section_tasks["border_color"].tolist()
+    trace.marker.line.color = colors
     trace.marker.line.width = 2
-    # Assign a legendgroup to these section traces so their legend remains together.
-    trace.legendgroup = "Section"
+    trace.showlegend = False
 
-# --- Add dummy scatter traces to create a separate legend for assignees.
-# These traces will not be plotted but will show the assignee names and their accent colors.
-unique_assignees = df['Assignee'].dropna().unique()
-for assignee in unique_assignees:
+# Add dummy scatter traces for custom legend items.
+# First, for Sections (using the fill colors only, no border).
+for section, fill_color in section_colors.items():
     fig.add_trace(
         go.Scatter(
             x=[None],
             y=[None],
-            mode='markers',
-            marker=dict(size=10, color=assignee_colors.get(assignee, 'black')),
-            legendgroup="Assignee",
+            mode="markers",
+            marker=dict(symbol="square", size=10, color=fill_color, line=dict(width=0)),
+            legendgroup="Section",
             showlegend=True,
-            name=f"Assignee: {assignee}"
+            name=section
         )
     )
 
-# --- Update layout for clarity.
+# Next, for Persons (black square with a border in the assigned color).
+for name, border_color in assignee_colors.items():
+    fig.add_trace(
+        go.Scatter(
+            x=[None],
+            y=[None],
+            mode="markers",
+            marker=dict(symbol="square", size=10, color="black", line=dict(color=border_color, width=2)),
+            legendgroup="Person",
+            showlegend=True,
+            name=name
+        )
+    )
+
+# -----------------------------
+# 6. Update Layout: Bold Headings and Custom Legend Title Formatting
+# -----------------------------
 fig.update_layout(
-    title="Project Gantt Chart",
-    xaxis_title="Date",
-    yaxis_title="Task",
-    margin=dict(l=20, r=20, t=50, b=20)
+    title=dict(
+        text="IED Gantt Chart",
+        font=dict(family="Arial Black", size=20, color="black")
+    ),
+    xaxis_title=dict(
+        text="Date",
+        font=dict(family="Arial Black", size=18, color="black")
+    ),
+    yaxis_title=dict(
+        text="Task",
+        font=dict(family="Arial Black", size=18, color="black")
+    ),
+    legend_title_text="Legend",
+    legend_title_font=dict(family="Arial Black", size=16, color="black"),
+    margin=dict(l=20, r=150, t=70, b=20),
+    legend=dict(x=1.02, y=1)
 )
 
+
+fig.update_xaxes(tickformat="%m/%d", dtick=648000000)  # Adjust dtick as desired
 fig.show()
 fig.write_html("index.html")
